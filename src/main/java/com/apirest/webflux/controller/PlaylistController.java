@@ -47,6 +47,7 @@ public class PlaylistController {
 		Flux<Long> interval = Flux.interval(Duration.ofSeconds(10));
         Flux<Playlist> events = service.findAll();
         System.out.print("Passou aqui events");
+        System.out.println("Salve  GALERA");
         return Flux.zip(interval, events);
         
 	}
