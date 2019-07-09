@@ -44,9 +44,9 @@ public class PlaylistController {
 	@GetMapping(value="/playlist/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 	public Flux<Tuple2<Long, Playlist>> getPlaylistByEvents(){
 		
-		Flux<Long> interval = Flux.interval(Duration.ofSeconds(10));
+		Flux<Long> interval = Flux.interval(Duration.ofSeconds(5));
         Flux<Playlist> events = service.findAll();
-        System.out.print("Passou aqui events");
+        System.out.println("Passou aqui events");
         System.out.println("Salve  GALERA");
         return Flux.zip(interval, events);
         
